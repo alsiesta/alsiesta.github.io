@@ -1,55 +1,152 @@
-/* Ensure spacing between notebook sections */
+/* =========================
+   Category Card Backgrounds
+   ========================= */
+.notebook-category.category-business {
+    background-image: url('assets/img/business.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 50%;
+    background-color: white;
+}
+.notebook-category.category-programming {
+    background-image: url('assets/img/programming.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 50%;
+    background-color: white;
+}
+.notebook-category.category-science {
+    background-image: url('assets/img/learning.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 50%;
+    background-color: white;
+}
+.notebook-category.category-productivity {
+    background-image: url('assets/img/productivity.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 50%;
+    background-color: white;
+}
+
+    /* =========================
+       Dark Mode Category Card Backgrounds
+       ========================= */
+    .dark-mode .category-business {
+        background-image: url('assets/img/business-dark.png');
+        background-position: center right;
+        background-size: 50%;
+        background-color: black;
+    }
+    .dark-mode .category-programming {
+        background-image: url('assets/img/programming-dark.png');
+        background-position: center right;
+        background-size: 50%;
+        background-color: black;
+        
+    }
+    .dark-mode .category-science {
+        background-image: url('assets/img/learning-dark.png');
+        background-position: center right;
+        background-size: 50%;
+        background-color: black;
+        
+    }
+    .dark-mode .category-productivity {
+        background-image: url('assets/img/business-dark.png');
+        background-position: center right;
+        background-size: 50%;
+        background-color: black;
+        
+    }
+
+@media (max-width: 768px) {
+    .category-business,
+    .category-programming,
+    .category-science,
+    .category-productivity {
+        background-size: 90px auto;
+    }
+}
+/* =========================
+   Category Image Styles
+   ========================= */
+.category-img {
+    width: 2.1em;
+    height: 2.1em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    object-fit: contain;
+}
+
+/* =========================
+   Spacing Between Sections
+   ========================= */
 .notebooks {
     margin-bottom: 2.5rem;
 }
-/* Reset and Base Styles */
+
+/* =========================
+   Reset and Base Styles
+   ========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =========================
+   Theme Variables
+   ========================= */
 :root {
-    --background-gradient: linear-gradient(135deg, #0a35f1 0%, #6214b1 100%);
-    --card-background: white;
-    --header-background: rgba(0, 0, 0, 0.2);
-    --footer-background: rgba(0, 0, 0, 0.2);
-    --text-color: #333;
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
+    --background-gradient: linear-gradient(135deg, #eee6d4 0%, #e4e3e1 100%);
+    --card-background: #fff;
+    --header-background: rgba(0, 0, 0, 0.15);
+    --footer-background: rgba(0, 0, 0, 0.15);
+    --text-color: #222;
+    --primary-color: #251029;
+    --secondary-color: #0e7513;
     --code-background: #f5f7fa;
     --card-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    --back-link-background: white;
-    --back-link-color: #667eea;
-    --header-title-color: #43fc1e;
-    --header-subtitle-color: #18f562;
-}
+    --back-link-background: #fff;
+    --back-link-color: #4f46e5;
+    --header-title-color: #15410c;
+    --header-subtitle-color: #142910;
+    }
 
-.dark-mode {
-    --background-gradient: linear-gradient(135deg, #232526 0%, #414345 100%);
-    --card-background: #232526;
-    --header-background: rgba(0, 0, 0, 0.6);
-    --footer-background: rgba(0, 0, 0, 0.6);
-    --text-color: #f5f7fa;
-    --primary-color: #a3bffa;
-    --secondary-color: #b39ddb;
-    --code-background: #2c2c2c;
-    --card-gradient: linear-gradient(135deg, #232526 0%, #414345 100%);
-    --back-link-background: #232526;
-    --back-link-color: #a3bffa;
-    --header-title-color: #f5f7fa;
-    --header-subtitle-color: #e0e0e0;
-}
+    /* =========================
+        Dark Mode Theme Variables
+        ========================= */
+    .dark-mode {
+         --background-gradient: linear-gradient(135deg, #232526 0%, #414345 100%);
+         --card-background: #232526;
+         --header-background: rgba(0, 0, 0, 0.6);
+         --footer-background: rgba(0, 0, 0, 0.6);
+         --text-color: #f5f7fa;
+         --primary-color: #a3bffa;
+         --secondary-color: #b39ddb;
+         --code-background: #2c2c2c;
+         --card-gradient: linear-gradient(135deg, #232526 0%, #414345 100%);
+         --back-link-background: #232526;
+         --back-link-color: #a3bffa;
+         --header-title-color: #f5f7fa;
+         --header-subtitle-color: #e0e0e0;
+    }
+
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-color);
     background: var(--background-gradient);
     min-height: 100vh;
+    letter-spacing: 0.01em;
 }
 
-/* Header */
+/* =========================
+   Header Styles
+   ========================= */
 header {
     text-align: center;
     padding: 3rem 1rem;
@@ -58,42 +155,53 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     margin-bottom: 0.5rem;
     color: var(--header-title-color);
+    letter-spacing: 0.03em;
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     opacity: 1;
     color: var(--header-subtitle-color);
+    margin-bottom: 0.5rem;
 }
 
-/* Main Content */
+/* =========================
+   Main Content Styles
+   ========================= */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1rem;
 }
 
-/* Notebooks Section */
+/* =========================
+   Notebooks Section Styles
+   ========================= */
 .notebooks {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
+
 .notebook-category {
-    background: var(--card-background);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 220px;
+    background-clip: padding-box;
+    background: transparent;
+    border: 2px dashed #b39ddb;
+    border-radius: 14px;
+    padding: 2.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .notebook-category h2 {
-    color: #667eea;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    letter-spacing: 0.02em;
 }
 
 .notebook-list {
@@ -106,49 +214,58 @@ main {
     display: block;
     padding: 1.5rem;
     background: var(--card-gradient);
-    border-radius: 8px;
+    border-radius: 10px;
     text-decoration: none;
     color: var(--text-color);
     transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
 .notebook-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
 }
 
 .notebook-card h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+    letter-spacing: 0.01em;
 }
 
 .notebook-card p {
     color: var(--text-color);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    margin-bottom: 0;
 }
 
-/* Footer */
+/* =========================
+   Footer Styles
+   ========================= */
 footer {
     text-align: center;
     padding: 2rem 1rem;
     color: var(--header-subtitle-color);
     background: var(--footer-background);
     margin-top: 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
 }
 
-/* Responsive Design */
+/* =========================
+   Responsive Design
+   ========================= */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 2.1rem;
     }
 
     header p {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
     .notebook-category {
-        padding: 1.5rem;
+        padding: 1.3rem;
     }
 
     .notebook-category h2 {
@@ -160,7 +277,9 @@ footer {
     }
 }
 
-/* Notebook Page Styles */
+/* =========================
+   Notebook Page Styles
+   ========================= */
 .notebook-page {
     max-width: 800px;
     margin: 0 auto;
@@ -206,7 +325,7 @@ footer {
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .notebook-content pre {
@@ -222,6 +341,9 @@ footer {
     padding: 0;
 }
 
+/* =========================
+   Back Link Styles
+   ========================= */
 .back-link {
     display: inline-block;
     margin-bottom: 2rem;

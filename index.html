@@ -7,61 +7,67 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <!-- Header with ARIA role and accessible labels -->
+    <header role="banner" aria-label="Knowledge Notebooks Header">
         <h1>📚 Knowledge Notebooks</h1>
         <p>Organize and share knowledge</p>
-        <button id="theme-toggle" style="margin-top:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;cursor:pointer;">🌙 Dark Mode</button>
+        <button id="theme-toggle" aria-label="Toggle dark and light mode" style="margin-top:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;cursor:pointer;">🌙 Dark Mode</button>
     </header>
 
-    <main>
-        <section class="notebooks">
-            <div class="notebook-category">
-                <h2>🏢 Business & KI</h2>
-                <div class="notebook-list">
-                    <a href="notebooks/business/ki-leitfaden.html" class="notebook-card">
+    <!-- Main content area with ARIA role -->
+    <main role="main">
+        <!-- Business & KI Section -->
+        <section class="notebooks" aria-labelledby="business-ki-heading">
+        <div class="notebook-category category-business">
+    <h2 id="business-ki-heading">Business & KI</h2>
+                <div class="notebook-list" role="list">
+                    <a href="notebooks/business/ki-leitfaden.html" class="notebook-card" role="listitem" aria-label="Leitfaden KI im Unternehmen">
                         <h3>Leitfaden KI im Unternehmen</h3>
                         <p>Praxisnaher Einstieg und Empfehlungen für den Mittelstand</p>
                     </a>
                 </div>
             </div>
         </section>
-        <section class="notebooks">
-            <div class="notebook-category">
-                <h2>📝 Programming</h2>
-                <div class="notebook-list">
-                    <a href="notebooks/programming/python-basics.html" class="notebook-card">
+        <!-- Programming Section -->
+        <section class="notebooks" aria-labelledby="programming-heading">
+        <div class="notebook-category category-programming">
+    <h2 id="programming-heading">Programming</h2>
+                <div class="notebook-list" role="list">
+                    <a href="notebooks/programming/python-basics.html" class="notebook-card" role="listitem" aria-label="Python Basics">
                         <h3>Python Basics</h3>
                         <p>Essential Python concepts and syntax</p>
                     </a>
-                    <a href="notebooks/programming/javascript-tips.html" class="notebook-card">
+                    <a href="notebooks/programming/javascript-tips.html" class="notebook-card" role="listitem" aria-label="JavaScript Tips">
                         <h3>JavaScript Tips</h3>
                         <p>Useful JavaScript patterns and tricks</p>
                     </a>
                 </div>
             </div>
 
-            <div class="notebook-category">
-                <h2>🔬 Science</h2>
-                <div class="notebook-list">
-                    <a href="notebooks/science/physics-notes.html" class="notebook-card">
+            <!-- Science Section -->
+        <div class="notebook-category category-science">
+    <h2 id="science-heading">Science</h2>
+                <div class="notebook-list" role="list">
+                    <a href="notebooks/science/physics-notes.html" class="notebook-card" role="listitem" aria-label="Physics Notes">
                         <h3>Physics Notes</h3>
                         <p>Key physics concepts and formulas</p>
                     </a>
-                    <a href="notebooks/science/chemistry-basics.html" class="notebook-card">
+                    <a href="notebooks/science/chemistry-basics.html" class="notebook-card" role="listitem" aria-label="Chemistry Basics">
                         <h3>Chemistry Basics</h3>
                         <p>Fundamental chemistry principles</p>
                     </a>
                 </div>
             </div>
 
-            <div class="notebook-category">
-                <h2>💡 Productivity</h2>
-                <div class="notebook-list">
-                    <a href="notebooks/productivity/time-management.html" class="notebook-card">
+            <!-- Productivity Section -->
+        <div class="notebook-category category-productivity">
+    <h2 id="productivity-heading">Productivity</h2>
+                <div class="notebook-list" role="list">
+                    <a href="notebooks/productivity/time-management.html" class="notebook-card" role="listitem" aria-label="Time Management">
                         <h3>Time Management</h3>
                         <p>Strategies for better time management</p>
                     </a>
-                    <a href="notebooks/productivity/learning-techniques.html" class="notebook-card">
+                    <a href="notebooks/productivity/learning-techniques.html" class="notebook-card" role="listitem" aria-label="Learning Techniques">
                         <h3>Learning Techniques</h3>
                         <p>Effective methods for learning new skills</p>
                     </a>
@@ -70,11 +76,13 @@
         </section>
     </main>
 
-    <footer>
+    <!-- Footer with ARIA role -->
+    <footer role="contentinfo" aria-label="Knowledge Notebooks Footer">
         <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
     </footer>
     <script>
     // Dark/Light mode toggle logic
+    // Accessible toggle button for theme switching
     const toggleBtn = document.getElementById('theme-toggle');
     function setTheme(dark) {
         if (dark) {

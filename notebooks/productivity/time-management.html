@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
-    <header>
-    <h1>📚 Knowledge Notebooks</h1>
-    <p>Organize and share knowledge</p>
-    <button id="theme-toggle" style="margin-top:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;cursor:pointer;">🌙 Dark Mode</button>
+    <!-- Header with ARIA role and accessible labels -->
+    <header role="banner" aria-label="Knowledge Notebooks Header">
+        <h1>📚 Knowledge Notebooks</h1>
+        <p>Organize and share knowledge</p>
+        <button id="theme-toggle" aria-label="Toggle dark and light mode" style="margin-top:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;cursor:pointer;">🌙 Dark Mode</button>
     </header>
 
-    <main class="notebook-page">
+    <main class="notebook-page" role="main">
         <a href="../../index.html" class="back-link">← Back to Home</a>
-        
         <div class="notebook-content">
             <h1>Time Management</h1>
             
@@ -119,14 +119,13 @@
             </ol>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
-    <footer>
+    <!-- Footer with ARIA role -->
+    <footer role="contentinfo" aria-label="Knowledge Notebooks Footer">
         <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
     </footer>
     <script>
     // Dark/Light mode toggle logic
+    // Accessible toggle button for theme switching
     const toggleBtn = document.getElementById('theme-toggle');
     function setTheme(dark) {
         if (dark) {
@@ -140,6 +139,12 @@
     // Load theme from localStorage
     const darkPref = localStorage.getItem('theme') === 'dark';
     setTheme(darkPref);
+    toggleBtn.addEventListener('click', () => {
+        const isDark = !document.body.classList.contains('dark-mode');
+        setTheme(isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    </script>
     toggleBtn.addEventListener('click', () => {
         const isDark = !document.body.classList.contains('dark-mode');
         setTheme(isDark);

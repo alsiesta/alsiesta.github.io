@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
-    <header>
-    <h1>Leitfaden: Künstliche Intelligenz im Unternehmen</h1>
-    <p>Ein praxisnaher Einstieg für den Mittelstand – Zusammenfassung und Empfehlungen</p>
-    <button id="theme-toggle" style="margin-top:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;cursor:pointer;">🌙 Dark Mode</button>
+    <!-- Header with ARIA role and accessible labels -->
+    <header role="banner" aria-label="Leitfaden KI Header">
+        <h1>Leitfaden: Künstliche Intelligenz im Unternehmen</h1>
+        <p>Ein praxisnaher Einstieg für den Mittelstand – Zusammenfassung und Empfehlungen</p>
+        <button id="theme-toggle" aria-label="Toggle dark and light mode" style="margin-top:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;cursor:pointer;">🌙 Dark Mode</button>
     </header>
-    <main class="notebook-page">
-    <a href="../../index.html" class="back-link">← Zurück zur Übersicht</a>
-    <div class="notebook-content">
+    <main class="notebook-page" role="main">
+        <a href="../../index.html" class="back-link">← Zurück zur Übersicht</a>
+        <div class="notebook-content">
             <h2>Wie Sie diesen Leitfaden nutzen</h2>
             <p><strong>Die KI, sie ist schon da!</strong><br>
             KI steckt längst in den Werkzeugen, die Ihre Mitarbeitenden täglich nutzen: Textbearbeitung, Präsentationen, Analysen. Ohne klare Strategie bleibt diese Nutzung unsichtbar und unkontrolliert. Gleichzeitig verpflichtet der EU AI Act (seit 2024 in Kraft) Unternehmen zum verantwortungsvollen Einsatz. Wer jetzt Strukturen schafft und erste Schritte in die Praxis umsetzt, der vermeidet Risiken und verschafft sich Klarheit und einen Wettbewerbsvorsprung.</p>
@@ -65,13 +66,13 @@
             <a href="mailto:as@daslizenzatelier.de">as@daslizenzatelier.de</a> | <a href="https://www.alexanderschoenfeld.com" target="_blank">alexanderschoenfeld.com</a></p>
         </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
-    <footer>
+    <!-- Footer with ARIA role -->
+    <footer role="contentinfo" aria-label="Leitfaden KI Footer">
         <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
     </footer>
     <script>
     // Dark/Light mode toggle logic
+    // Accessible toggle button for theme switching
     const toggleBtn = document.getElementById('theme-toggle');
     function setTheme(dark) {
         if (dark) {
@@ -80,6 +81,17 @@
         } else {
             document.body.classList.remove('dark-mode');
             toggleBtn.textContent = '🌙 Dark Mode';
+        }
+    }
+    // Load theme from localStorage
+    const darkPref = localStorage.getItem('theme') === 'dark';
+    setTheme(darkPref);
+    toggleBtn.addEventListener('click', () => {
+        const isDark = !document.body.classList.contains('dark-mode');
+        setTheme(isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    </script>
         }
     }
     // Load theme from localStorage
