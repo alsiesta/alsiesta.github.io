@@ -10,6 +10,7 @@
     <header>
         <h1>📚 Knowledge Notebooks</h1>
         <p>Organize and share knowledge</p>
+        <button id="theme-toggle" style="margin-top:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;cursor:pointer;">🌙 Dark Mode</button>
     </header>
 
     <main>
@@ -17,11 +18,11 @@
             <div class="notebook-category">
                 <h2>📝 Programming</h2>
                 <div class="notebook-list">
-                    <a href="notebooks/programming/python-basics" class="notebook-card">
+                    <a href="notebooks/programming/python-basics.html" class="notebook-card">
                         <h3>Python Basics</h3>
                         <p>Essential Python concepts and syntax</p>
                     </a>
-                    <a href="notebooks/programming/javascript-tips" class="notebook-card">
+                    <a href="notebooks/programming/javascript-tips.html" class="notebook-card">
                         <h3>JavaScript Tips</h3>
                         <p>Useful JavaScript patterns and tricks</p>
                     </a>
@@ -31,11 +32,11 @@
             <div class="notebook-category">
                 <h2>🔬 Science</h2>
                 <div class="notebook-list">
-                    <a href="notebooks/science/physics-notes" class="notebook-card">
+                    <a href="notebooks/science/physics-notes.html" class="notebook-card">
                         <h3>Physics Notes</h3>
                         <p>Key physics concepts and formulas</p>
                     </a>
-                    <a href="notebooks/science/chemistry-basics" class="notebook-card">
+                    <a href="notebooks/science/chemistry-basics.html" class="notebook-card">
                         <h3>Chemistry Basics</h3>
                         <p>Fundamental chemistry principles</p>
                     </a>
@@ -45,11 +46,11 @@
             <div class="notebook-category">
                 <h2>💡 Productivity</h2>
                 <div class="notebook-list">
-                    <a href="notebooks/productivity/time-management" class="notebook-card">
+                    <a href="notebooks/productivity/time-management.html" class="notebook-card">
                         <h3>Time Management</h3>
                         <p>Strategies for better time management</p>
                     </a>
-                    <a href="notebooks/productivity/learning-techniques" class="notebook-card">
+                    <a href="notebooks/productivity/learning-techniques.html" class="notebook-card">
                         <h3>Learning Techniques</h3>
                         <p>Effective methods for learning new skills</p>
                     </a>
@@ -60,6 +61,27 @@
 
     <footer>
         <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
+    <footer>
+        <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
     </footer>
-</body>
-</html>
+    <script>
+    // Dark/Light mode toggle logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    function setTheme(dark) {
+        if (dark) {
+            document.body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Light Mode';
+        } else {
+            document.body.classList.remove('dark-mode');
+            toggleBtn.textContent = '🌙 Dark Mode';
+        }
+    }
+    // Load theme from localStorage
+    const darkPref = localStorage.getItem('theme') === 'dark';
+    setTheme(darkPref);
+    toggleBtn.addEventListener('click', () => {
+        const isDark = !document.body.classList.contains('dark-mode');
+        setTheme(isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    </script>

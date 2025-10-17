@@ -8,8 +8,9 @@
 </head>
 <body>
     <header>
-        <h1>📚 Knowledge Notebooks</h1>
-        <p>Organize and share knowledge</p>
+    <h1>📚 Knowledge Notebooks</h1>
+    <p>Organize and share knowledge</p>
+    <button id="theme-toggle" style="margin-top:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;cursor:pointer;">🌙 Dark Mode</button>
     </header>
 
     <main class="notebook-page">
@@ -118,6 +119,27 @@ const html = `
 
     <footer>
         <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
+    <footer>
+        <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
     </footer>
-</body>
-</html>
+    <script>
+    // Dark/Light mode toggle logic
+    const toggleBtn = document.getElementById('theme-toggle');
+    function setTheme(dark) {
+        if (dark) {
+            document.body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Light Mode';
+        } else {
+            document.body.classList.remove('dark-mode');
+            toggleBtn.textContent = '🌙 Dark Mode';
+        }
+    }
+    // Load theme from localStorage
+    const darkPref = localStorage.getItem('theme') === 'dark';
+    setTheme(darkPref);
+    toggleBtn.addEventListener('click', () => {
+        const isDark = !document.body.classList.contains('dark-mode');
+        setTheme(isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    </script>

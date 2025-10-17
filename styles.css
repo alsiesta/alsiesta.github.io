@@ -5,11 +5,43 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background-gradient: linear-gradient(135deg, #0a35f1 0%, #6214b1 100%);
+    --card-background: white;
+    --header-background: rgba(0, 0, 0, 0.2);
+    --footer-background: rgba(0, 0, 0, 0.2);
+    --text-color: #333;
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --code-background: #f5f7fa;
+    --card-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --back-link-background: white;
+    --back-link-color: #667eea;
+    --header-title-color: #43fc1e;
+    --header-subtitle-color: #18f562;
+}
+
+.dark-mode {
+    --background-gradient: linear-gradient(135deg, #232526 0%, #414345 100%);
+    --card-background: #232526;
+    --header-background: rgba(0, 0, 0, 0.6);
+    --footer-background: rgba(0, 0, 0, 0.6);
+    --text-color: #f5f7fa;
+    --primary-color: #a3bffa;
+    --secondary-color: #b39ddb;
+    --code-background: #2c2c2c;
+    --card-gradient: linear-gradient(135deg, #232526 0%, #414345 100%);
+    --back-link-background: #232526;
+    --back-link-color: #a3bffa;
+    --header-title-color: #f5f7fa;
+    --header-subtitle-color: #e0e0e0;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--text-color);
+    background: var(--background-gradient);
     min-height: 100vh;
 }
 
@@ -17,18 +49,20 @@ body {
 header {
     text-align: center;
     padding: 3rem 1rem;
-    color: white;
-    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    background: var(--header-background);
 }
 
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    color: var(--header-title-color);
 }
 
 header p {
     font-size: 1.2rem;
-    opacity: 0.9;
+    opacity: 1;
+    color: var(--header-subtitle-color);
 }
 
 /* Main Content */
@@ -46,7 +80,7 @@ main {
 }
 
 .notebook-category {
-    background: white;
+    background: var(--card-background);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -67,10 +101,10 @@ main {
 .notebook-card {
     display: block;
     padding: 1.5rem;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: var(--card-gradient);
     border-radius: 8px;
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -80,13 +114,13 @@ main {
 }
 
 .notebook-card h3 {
-    color: #667eea;
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
 }
 
 .notebook-card p {
-    color: #666;
+    color: var(--text-color);
     font-size: 0.95rem;
 }
 
@@ -94,8 +128,8 @@ main {
 footer {
     text-align: center;
     padding: 2rem 1rem;
-    color: white;
-    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+    background: var(--footer-background);
     margin-top: 2rem;
 }
 
@@ -130,25 +164,25 @@ footer {
 }
 
 .notebook-content {
-    background: white;
+    background: var(--card-background);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .notebook-content h1 {
-    color: #667eea;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .notebook-content h2 {
-    color: #764ba2;
+    color: var(--secondary-color);
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
 .notebook-content h3 {
-    color: #667eea;
+    color: var(--primary-color);
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
 }
@@ -163,7 +197,7 @@ footer {
 }
 
 .notebook-content code {
-    background: #f5f7fa;
+    background: var(--code-background);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
@@ -171,7 +205,7 @@ footer {
 }
 
 .notebook-content pre {
-    background: #f5f7fa;
+    background: var(--code-background);
     padding: 1rem;
     border-radius: 8px;
     overflow-x: auto;
@@ -187,8 +221,8 @@ footer {
     display: inline-block;
     margin-bottom: 2rem;
     padding: 0.5rem 1rem;
-    background: white;
-    color: #667eea;
+    background: var(--back-link-background);
+    color: var(--back-link-color);
     text-decoration: none;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
