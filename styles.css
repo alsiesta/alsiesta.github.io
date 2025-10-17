@@ -172,6 +172,7 @@ footer {
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
 }
 
 .notebook-content h1 {
