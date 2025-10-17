@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tips - Knowledge Notebooks</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Knowledge Notebooks</h1>
+        <p>Organize and share knowledge</p>
+    </header>
+
+    <main class="notebook-page">
+        <a href="../../index.html" class="back-link">← Back to Home</a>
+        
+        <div class="notebook-content">
+            <h1>JavaScript Tips</h1>
+            
+            <h2>Modern JavaScript Patterns</h2>
+            <p>JavaScript has evolved significantly with ES6+ features. Here are some useful patterns and tips.</p>
+
+            <h3>Destructuring</h3>
+            <p>Extract values from arrays or objects easily:</p>
+            
+            <pre><code>// Array destructuring
+const [first, second] = [1, 2, 3];
+
+// Object destructuring
+const { name, age } = { name: "Alice", age: 30 };
+
+// Function parameter destructuring
+function greet({ name, age }) {
+    return `Hello ${name}, you are ${age} years old`;
+}</code></pre>
+
+            <h3>Arrow Functions</h3>
+            <p>Concise syntax for function expressions:</p>
+            
+            <pre><code>// Traditional function
+const add = function(a, b) {
+    return a + b;
+};
+
+// Arrow function
+const add = (a, b) => a + b;
+
+// With array methods
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(n => n * 2);</code></pre>
+
+            <h2>Useful Array Methods</h2>
+            <ul>
+                <li><code>map()</code> - Transform each element</li>
+                <li><code>filter()</code> - Select elements matching a condition</li>
+                <li><code>reduce()</code> - Reduce array to a single value</li>
+                <li><code>find()</code> - Find first matching element</li>
+                <li><code>some()</code> - Check if any element matches</li>
+                <li><code>every()</code> - Check if all elements match</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <pre><code>const users = [
+    { name: "Alice", age: 30 },
+    { name: "Bob", age: 25 },
+    { name: "Charlie", age: 35 }
+];
+
+// Find adults
+const adults = users.filter(u => u.age >= 18);
+
+// Get names
+const names = users.map(u => u.name);
+
+// Sum ages
+const totalAge = users.reduce((sum, u) => sum + u.age, 0);</code></pre>
+
+            <h2>Async/Await</h2>
+            <p>Handle asynchronous operations cleanly:</p>
+            
+            <pre><code>// Async function
+async function fetchData() {
+    try {
+        const response = await fetch('api/data');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}</code></pre>
+
+            <h2>Template Literals</h2>
+            <p>Create strings with embedded expressions:</p>
+            
+            <pre><code>const name = "Alice";
+const age = 30;
+const message = `Hello, my name is ${name} and I am ${age} years old`;
+
+// Multi-line strings
+const html = `
+    &lt;div&gt;
+        &lt;h1&gt;${name}&lt;/h1&gt;
+        &lt;p&gt;Age: ${age}&lt;/p&gt;
+    &lt;/div&gt;
+`;</code></pre>
+
+            <h2>Tips and Best Practices</h2>
+            <ol>
+                <li>Use <code>const</code> by default, <code>let</code> when needed</li>
+                <li>Avoid <code>var</code> - it has function scope</li>
+                <li>Use strict equality <code>===</code> instead of <code>==</code></li>
+                <li>Handle errors with try/catch blocks</li>
+                <li>Use async/await for cleaner async code</li>
+            </ol>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Basics - Knowledge Notebooks</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Knowledge Notebooks</h1>
+        <p>Organize and share knowledge</p>
+    </header>
+
+    <main class="notebook-page">
+        <a href="../../index.html" class="back-link">← Back to Home</a>
+        
+        <div class="notebook-content">
+            <h1>Python Basics</h1>
+            
+            <h2>Introduction</h2>
+            <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It's widely used for web development, data science, automation, and more.</p>
+
+            <h2>Basic Syntax</h2>
+            
+            <h3>Variables and Data Types</h3>
+            <p>Python has several built-in data types:</p>
+            <ul>
+                <li><code>int</code> - Integer numbers</li>
+                <li><code>float</code> - Decimal numbers</li>
+                <li><code>str</code> - Text strings</li>
+                <li><code>bool</code> - Boolean (True/False)</li>
+                <li><code>list</code> - Ordered collection</li>
+                <li><code>dict</code> - Key-value pairs</li>
+            </ul>
+
+            <pre><code># Example variables
+name = "Alice"
+age = 30
+height = 5.6
+is_student = False
+skills = ["Python", "JavaScript", "HTML"]</code></pre>
+
+            <h3>Control Flow</h3>
+            <p>Python uses indentation to define code blocks:</p>
+            
+            <pre><code># If statement
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+# For loop
+for skill in skills:
+    print(f"I know {skill}")
+
+# While loop
+count = 0
+while count < 5:
+    print(count)
+    count += 1</code></pre>
+
+            <h2>Functions</h2>
+            <p>Functions are defined using the <code>def</code> keyword:</p>
+            
+            <pre><code>def greet(name):
+    return f"Hello, {name}!"
+
+# Call the function
+message = greet("Alice")
+print(message)  # Output: Hello, Alice!</code></pre>
+
+            <h2>Key Concepts</h2>
+            <ul>
+                <li><strong>List Comprehensions:</strong> Concise way to create lists</li>
+                <li><strong>Lambda Functions:</strong> Small anonymous functions</li>
+                <li><strong>Exception Handling:</strong> Use try/except blocks</li>
+                <li><strong>Modules:</strong> Import external libraries with <code>import</code></li>
+            </ul>
+
+            <h2>Best Practices</h2>
+            <ol>
+                <li>Use meaningful variable names</li>
+                <li>Follow PEP 8 style guidelines</li>
+                <li>Write docstrings for functions</li>
+                <li>Keep functions small and focused</li>
+                <li>Use virtual environments for projects</li>
+            </ol>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Knowledge Notebooks | Share and organize your knowledge</p>
+    </footer>
+</body>
+</html>
