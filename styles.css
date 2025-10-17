@@ -1,3 +1,17 @@
+/* Security Category Card */
+.notebook-category.category-security {
+    background-image: url('assets/img/security.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 50%;
+    background-color: white;
+}
+    .dark-mode .category-security {
+        background-image: url('assets/img/security-dark.png');
+        background-position: center right;
+        background-size: 50%;
+        background-color: black;
+    }
 /* =========================
    Category Card Backgrounds
    ========================= */
@@ -15,8 +29,16 @@
     background-size: 50%;
     background-color: white;
 }
-.notebook-category.category-science {
+/* Learning Category Card */
+.notebook-category.category-learning {
     background-image: url('assets/img/learning.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 50%;
+    background-color: white;
+}
+.notebook-category.category-artificial-intelligence {
+    background-image: url('assets/img/artificial-intelligence.png');
     background-repeat: no-repeat;
     background-position: center right;
     background-size: 50%;
@@ -24,6 +46,13 @@
 }
 .notebook-category.category-productivity {
     background-image: url('assets/img/productivity.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 50%;
+    background-color: white;
+}
+.notebook-category.category-security {
+    background-image: url('assets/img/security.png');
     background-repeat: no-repeat;
     background-position: center right;
     background-size: 50%;
@@ -44,28 +73,39 @@
         background-position: center right;
         background-size: 50%;
         background-color: black;
-        
     }
-    .dark-mode .category-science {
+    .dark-mode .category-learning {
         background-image: url('assets/img/learning-dark.png');
         background-position: center right;
         background-size: 50%;
         background-color: black;
-        
     }
-    .dark-mode .category-productivity {
-        background-image: url('assets/img/business-dark.png');
+    .dark-mode .category-artificial-intelligence {
+        background-image: url('assets/img/artificial-intelligence-dark.png');
         background-position: center right;
         background-size: 50%;
         background-color: black;
-        
+    }
+    .dark-mode .category-productivity {
+        background-image: url('assets/img/productivity-dark.png');
+        background-position: center right;
+        background-size: 50%;
+        background-color: black;
+    }
+    .dark-mode .category-security {
+        background-image: url('assets/img/security-dark.png');
+        background-position: center right;
+        background-size: 50%;
+        background-color: black;
     }
 
 @media (max-width: 768px) {
     .category-business,
     .category-programming,
-    .category-science,
-    .category-productivity {
+    .category-learning,
+    .category-artificial-intelligence,
+    .category-productivity,
+    .category-security {
         background-size: 90px auto;
     }
 }
@@ -206,8 +246,14 @@ main {
 
 .notebook-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
+    justify-items: start;
+}
+
+.notebook-card {
+    width: 60%;
+    max-width: 700px;
 }
 
 .notebook-card {
@@ -274,6 +320,10 @@ footer {
 
     .notebook-list {
         grid-template-columns: 1fr;
+    }
+    .notebook-card {
+        width: 100%;
+        max-width: 100%;
     }
 }
 
